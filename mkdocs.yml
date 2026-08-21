@@ -1,0 +1,81 @@
+site_name: Colflux Wiki
+site_description: Documentación técnica y de usuario de la plataforma Colflux
+site_url: https://colflux.github.io/wiki/
+repo_url: https://github.com/colflux/wiki
+repo_name: colflux/wiki
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Inicio: index.md
+  - Usuarios:
+      - usuarios/index.md
+      - Primeros pasos: usuarios/primeros-pasos.md
+      - Conceptos básicos: usuarios/conceptos-basicos.md
+      - Guías:
+          - usuarios/guias/crear-proyecto.md
+      - FAQ: usuarios/faq.md
+      - Troubleshooting: usuarios/troubleshooting.md
+  - Técnica:
+      - tecnica/index.md
+      - Arquitectura:
+          - tecnica/arquitectura/overview.md
+          - tecnica/arquitectura/diagramas.md
+      - API:
+          - tecnica/api/reference.md
+      - Specs:
+          - tecnica/specs/index.md
+          - tecnica/specs/_template.md
+      - Desarrollo:
+          - tecnica/desarrollo/setup-local.md
+          - tecnica/desarrollo/contribuir.md
+      - Decisiones (ADR):
+          - tecnica/decisiones/index.md
+          - tecnica/decisiones/0001-registro-de-decisiones.md
